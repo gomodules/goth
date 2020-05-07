@@ -175,6 +175,10 @@ func (p *Provider) SetPrompt(prompt ...string) {
 	p.authCodeOptions = append(p.authCodeOptions, oauth2.SetAuthURLParam("prompt", strings.Join(prompt, " ")))
 }
 
+func (p *Provider) SetAccessType(at string) {
+	p.authCodeOptions = append(p.authCodeOptions, oauth2.SetAuthURLParam("access_type", at))
+}
+
 // SetHostedDomain sets the hd parameter for google OAuth call.
 // Use this to force user to pick user from specific hosted domain.
 // See https://developers.google.com/identity/protocols/oauth2/openid-connect#hd-param
