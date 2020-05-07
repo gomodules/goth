@@ -74,9 +74,10 @@ func main() {
 	googprovider :=google.New(os.Getenv("GOOGLE_KEY"), os.Getenv("GOOGLE_SECRET"), "http://localhost:3000/auth/google/callback",
 		"openid",
 		"https://www.googleapis.com/auth/userinfo.email",
-		"https://www.googleapis.com/auth/cloud-platform",
-		"https://www.googleapis.com/auth/compute",
-		"https://www.googleapis.com/auth/accounts.reauth",
+		"https://www.googleapis.com/auth/cloud-platform.read-only",
+		// "https://www.googleapis.com/auth/cloud-platform",
+		// "https://www.googleapis.com/auth/compute",
+		// "https://www.googleapis.com/auth/accounts.reauth",
 	)
 	googprovider.SetPrompt("consent")
 	googprovider.SetAccessType("offline")
